@@ -1,26 +1,102 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-color: #0a0a0a; /* قاعدة غامقة باش الألوان والشفافية يبانو Pro */
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* الكروت الشفافة الواضحة */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #00FFCC; /* اللون الزاهي اللي عجبك */
+}
+
+/* زر شفاف وزاهي */
+.btn-glass {
+  background: #00FFCC;
+  color: #000;
+  font-weight: 900;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+}
+
+.btn-glass:hover {
+  background: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 255, 204, 0.4);
+}
+
+
+
+
+
+
+
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #00FFCC;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #00FFCC;
+  transform: translateY(-5px);
 }
